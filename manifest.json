@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "Circle.so New Message Notifier",
+    "version": "1.0",
+    "description": "Notifies you when there are new messages on Circle.so",
+    "permissions": ["notifications"],
+    "host_permissions": ["https://pybites.circle.so/*"],"background": {
+    "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://pybites.circle.so/"],
+        "js": ["content.js"],
+        "run_at": "document_idle"
+      }
+    ],
+    "icons": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  }
+  
